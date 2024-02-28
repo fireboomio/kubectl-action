@@ -9,7 +9,7 @@ To use kubectl put this step into your workflow:
 
 ### Authorization with config file
 ```yaml
-- uses: actions-hub/kubectl@master
+- uses: fireboomio/kubectl-action@master
   env:
     KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
   with:
@@ -18,7 +18,7 @@ To use kubectl put this step into your workflow:
 
 ### Authorization with credentials
 ```yaml
-- uses: actions-hub/kubectl@master
+- uses: fireboomio/kubectl-action@master
   env:
     KUBE_HOST: ${{ secrets.KUBE_HOST }}
     KUBE_CERTIFICATE: ${{ secrets.KUBE_CERTIFICATE }}
@@ -30,7 +30,7 @@ To use kubectl put this step into your workflow:
 
 ### Authorization with a bearer token
 ```yaml
-- uses: actions-hub/kubectl@master
+- uses: fireboomio/kubectl-action@master
   env:
     KUBE_HOST: ${{ secrets.KUBE_HOST }}
     KUBE_CERTIFICATE: ${{ secrets.KUBE_CERTIFICATE }}
@@ -84,7 +84,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
-      - uses: actions-hub/kubectl@master
+      - uses: fireboomio/kubectl-action@master
         env:
           KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
         with:
@@ -102,11 +102,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
-      - uses: actions-hub/kubectl@master
+      - uses: fireboomio/kubectl-action@master
         env:
           KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
 
-      - uses: actions-hub/kubectl@master
+      - uses: fireboomio/kubectl-action@master
         with:
           args: get pods
 ```
@@ -117,7 +117,7 @@ After accepting PR the new release will be created.
 To use a specific version of kubectl use:
 
 ```yaml
-- uses: actions-hub/kubectl@1.14.3
+- uses: fireboomio/kubectl-action@1.14.3
   env:
     KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
   with:
@@ -125,4 +125,4 @@ To use a specific version of kubectl use:
 ```
 
 ## Licence
-[MIT License](https://github.com/actions-hub/kubectl/blob/master/LICENSE)
+[MIT License](https://github.com/fireboomio/kubectl-action/blob/master/LICENSE)
