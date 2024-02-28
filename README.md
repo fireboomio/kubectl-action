@@ -9,7 +9,7 @@ To use kubectl put this step into your workflow:
 
 ### Authorization with config file
 ```yaml
-- uses: fireboomio/kubectl-action@master
+- uses: fireboomio/kubectl-action@v1
   env:
     KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
   with:
@@ -18,7 +18,7 @@ To use kubectl put this step into your workflow:
 
 ### Authorization with credentials
 ```yaml
-- uses: fireboomio/kubectl-action@master
+- uses: fireboomio/kubectl-action@v1
   env:
     KUBE_HOST: ${{ secrets.KUBE_HOST }}
     KUBE_CERTIFICATE: ${{ secrets.KUBE_CERTIFICATE }}
@@ -30,7 +30,7 @@ To use kubectl put this step into your workflow:
 
 ### Authorization with a bearer token
 ```yaml
-- uses: fireboomio/kubectl-action@master
+- uses: fireboomio/kubectl-action@v1
   env:
     KUBE_HOST: ${{ secrets.KUBE_HOST }}
     KUBE_CERTIFICATE: ${{ secrets.KUBE_CERTIFICATE }}
@@ -84,7 +84,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
-      - uses: fireboomio/kubectl-action@master
+      - uses: fireboomio/kubectl-action@v1
         env:
           KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
         with:
@@ -102,11 +102,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
-      - uses: fireboomio/kubectl-action@master
+      - uses: fireboomio/kubectl-action@v1
         env:
           KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
 
-      - uses: fireboomio/kubectl-action@master
+      - uses: fireboomio/kubectl-action@v1
         with:
           args: get pods
 ```
