@@ -4,9 +4,10 @@ LABEL MAINTAINER="erguotou <erguotou525@gmail.com>"
 # ARG KUBE_VERSION="v1.29.2"
 
 COPY entrypoint.sh /entrypoint.sh
-COPY kubectl /usr/local/bin/kubectl
+COPY kubectl.tar.gz /kubectl.tar.gz
 
-RUN chmod +x /entrypoint.sh && \
+RUN tar -zxvf /kubectl.tar.gz -C /usr/local/bin/ && \
+    chmod +x /entrypoint.sh && \
     chmod +x /usr/local/bin/kubectl
     # apk add --no-cache --update openssl curl ca-certificates && \
     # rm -rf /var/cache/apk/*
